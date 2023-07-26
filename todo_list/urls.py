@@ -1,9 +1,9 @@
 from django.urls import path
 
-from todo_list.views import IndexView, TagListView
+from todo_list.views import TagListView, TaskListView
 
 urlpatterns = [
-    path("", IndexView.as_view(), name="index"),
+    path("", TaskListView.as_view(), name="task-list"),
     path("tags/", TagListView.as_view(), name="tag-list"),
 ]
 

@@ -2,4 +2,14 @@
 
 {% block content %}
 <h1>TODO List</h1>
+  <ul>
+    {% for task in task_list %}
+      <li>
+        <p><strong>{{ task.content }}</strong></p>
+        <p>Created: {{ task.created_at }}</p>
+        <p class="text-muted font-weight-bold">Tags:</p>
+      </li>
+      <hr>
+    {% endfor %}
+  </ul>
 {% endblock %}
