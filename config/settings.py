@@ -8,6 +8,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -16,7 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "todo_list"
+    "crispy_bootstrap4",
+    "crispy_forms",
+    "bootstrap4",
+    "todo_list",
 ]
 
 MIDDLEWARE = [
@@ -34,7 +41,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -46,6 +53,10 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
@@ -73,7 +84,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "Europe/Kiev"
 
 USE_I18N = True
 
