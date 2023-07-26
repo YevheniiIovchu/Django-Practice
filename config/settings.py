@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "crispy_bootstrap4",
+    "crispy_forms",
     "bootstrap4",
     "todo_list",
 ]
@@ -54,6 +55,8 @@ TEMPLATES = [
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
