@@ -14,7 +14,6 @@ class Tag (models.Model):
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=63)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(default=datetime.now() + timedelta(weeks=1))
@@ -22,7 +21,7 @@ class Task(models.Model):
     tag = models.ManyToManyField(Tag, related_name="tasks")
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["created_at"]
 
     def __str__(self):
-        return self.name
+        return self.content
