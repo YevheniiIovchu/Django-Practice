@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from django.db import models
 
 
@@ -15,7 +17,8 @@ class Task(models.Model):
     name = models.CharField(max_length=63)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    is_done = models.BooleanField()
+    deadline = models.DateTimeField(default=datetime.now() + timedelta(weeks=1))
+    is_done = models.BooleanField(default=False)
     tag = models.ManyToManyField(Tag, related_name="tasks")
 
     class Meta:
