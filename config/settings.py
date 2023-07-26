@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "crispy_bootstrap4",
+    "bootstrap4",
     "todo_list",
 ]
 

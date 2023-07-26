@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views import View
+from django.views import View, generic
+
+from todo_list.models import Task, Tag
 
 
 class IndexView(View):
@@ -7,3 +9,11 @@ class IndexView(View):
 
     def get(self, request):
         return render(request, self.template_name)
+
+
+class TaskListView(generic.ListView):
+    model = Task
+
+
+class TagListView(generic.ListView):
+    model = Tag
